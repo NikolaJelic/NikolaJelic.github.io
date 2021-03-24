@@ -6,10 +6,10 @@ After going through all these steps, you should be able to create, compile, debu
 
 ## Required tools
 
-	- IDE/Text Editor
-	- Compiler
-	- CMake and Ninja
-	- Debugger 
+- IDE/Text Editor
+- Compiler
+- CMake and Ninja
+- Debugger 
 
 ## IDE/Text Editor
 
@@ -39,18 +39,13 @@ It should be noted that Visual studio isn't available for Linux, so Visual Studi
 
 ## Compiler
 
-   Most likely you are writing code to accomplish or make something, but just written code alone doesn't do much. 
-
-   If you want to actually execute the program you have written, you need to first compile it and for that you need a *compiler*
-
    There are several different C++ compilers like:
 
    - [clang](https://clang.llvm.org/)
    - [gcc/g++](https://gcc.gnu.org/)
    - [mingw](http://mingw-w64.org/doku.php)
+   - MSVC
    - and others
-
-   We will be using *clang* together with [*cmake*](https://cmake.org/download/)
 
 ### 	Installation
 
@@ -58,24 +53,27 @@ It should be noted that Visual studio isn't available for Linux, so Visual Studi
 
    - Install [**CMake**](https://cmake.org/download/)
 
-   - Install clang using your favorite packet manager or follow the instructions [**here**](https://clang.llvm.org/get_started.html)
-   - You can also insallit from a pre-built binary found [**here**](https://releases.llvm.org/download.html)
+   - Install clang using your favorite package manager or follow the instructions [**here**](https://clang.llvm.org/get_started.html)
+   - You can also install it from a pre-built binary found [**here**](https://releases.llvm.org/download.html)
 
 #### 		Windows
 
    - Install [**CMake**](https://cmake.org/download/)
    - Clang can be found [**here**](https://llvm.org/builds/)
-   - After installing Clang, you should also add it to $PATH. (like [*this*](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/))
-   - If you are using Visual Studio, there is no need to manualy insall a compiler since you will be able to do that during the installation of Visual Studio  
+   - After installing Clang, you should also add it to $PATH. (like [*this*](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/))  
 
 
 ## CMake and Ninja
 
 - CMake is an open-source, cross-platform family of tools designed to build, test and package software. 
-- CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice. 
-- In short: CMake does stuff so you don't have to
-	### Installation 
-You can download it [**here**](https://cmake.org/download/) or use your favorite packet manager if you are running Linux
+
+- CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
+
+- In short - CMake sets up a build system using clang and ninja.
+
+### Installation 
+
+  You can download it [**here**](https://cmake.org/download/) or use your favorite package manager if you are running Linux
 
 ## Authoring an Executable
 
@@ -98,9 +96,7 @@ int main() {
 	std::cout<<"Hello World :)\n";
 }
 ```
-- Besides greeting the world, it also does one more thing: it implicitly _returns `0`_ when run successfully (if you are acquainted with the shell, you may already realise how to exploit this)
-
-Create a new file: `./CMakeLists.txt`
+- Besides greeting the world, it also does one more thing: it implicitly _returns `0`_ when run successfully Create a new file: `./CMakeLists.txt`
 
 - This is a **CMake (project) script**
 - Each project must have such a script at its root
